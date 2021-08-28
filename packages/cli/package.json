@@ -1,0 +1,29 @@
+{
+  "name": "javascript-note",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "dist"
+  ],
+  "bin": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "tsc --watch --preserveWatchOutput",
+    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@javascript-note/local-client": "^1.0.0"
+  },
+  "devDependencies": {
+    "@javascript-note/local-api": "^1.0.0",
+    "@types/node": "^16.7.2",
+    "commander": "^8.1.0",
+    "esbuild": "0.8.26",
+    "typescript": "^4.4.2"
+  }
+}
